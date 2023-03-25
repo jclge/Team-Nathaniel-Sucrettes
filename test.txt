@@ -1,0 +1,2 @@
+def thing(a: int):
+    return (f"haha{a}")
