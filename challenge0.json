@@ -1,0 +1,46 @@
+{
+    "language": "python",
+    "time": 900,
+    "title": "ALED",
+    "text": "FAIRE ALED",
+    "examples": {
+        "nb_examples": 1,
+        "example0": {
+            "input": "1, 2, 3, 4",
+            "output": "10"
+        }
+    },
+    "how_is_it_called": "get_sum(get_mean_length())",
+    "tests": {
+        "nb_users": 2,
+        "user0": {
+            "nb_tests": 3,
+            "prototype": "def get_sum(a: int, b: int, c: int, d: int) -> int",
+            "test0": {
+                "input": [1, 2, 3, 4],
+                "output": 10
+            },
+            "test1": {
+                "input": [0, 0, 0, 0],
+                "output": 0
+            },
+            "test2": {
+                "input": [1, 2, 1, 2],
+                "output": 6
+            }
+        },
+        "user1": {
+            "prototype": "def get_mean_length(nb: int, content: list[str]) -> int",
+            "nb_tests": 2,
+            "test0": {
+                "input": [2, ["abc", "def"]],
+                "output": 3
+            },
+            "test1": {
+                "input": [3, ["a", "abc"]],
+                "output": 2
+            }
+        }
+    },
+    "final_tests": {"prout": 123}
+}
