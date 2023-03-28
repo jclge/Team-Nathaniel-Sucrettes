@@ -1,7 +1,0 @@
-import sys
-
-def get_sum(a: int, b: int, c: int, d: int) -> int:
-    print(sys.argv[0])
-    print(f"haha{99} • ", end='')
-    print(a, b, c, d)
-    return (45678)

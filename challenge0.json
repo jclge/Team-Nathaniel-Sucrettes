@@ -10,7 +10,6 @@
             "output": "10"
         }
     },
-    "how_is_it_called": "get_sum(get_mean_length())",
     "tests": {
         "nb_users": 2,
         "user0": {
@@ -18,7 +17,7 @@
             "prototype": "def get_sum(a: int, b: int, c: int, d: int) -> int",
             "test0": {
                 "input": [1, 2, 3, 4],
-                "output": 10
+                "output": 4
             },
             "test1": {
                 "input": [0, 0, 0, 0],
@@ -30,7 +29,7 @@
             }
         },
         "user1": {
-            "prototype": "def get_mean_length(nb: int, content: list[str]) -> int",
+            "prototype": "def get_mean_length(content: list[str]) -> int",
             "nb_tests": 2,
             "test0": {
                 "input": [2, ["abc", "def"]],
@@ -42,5 +41,27 @@
             }
         }
     },
-    "final_tests": {"prout": 123}
+    "final_tests": {
+        "how_is_it_called": "get_sum(get_mean_length(arg0), arg1, arg2, arg3)",
+        "nb_tests": 2,
+        "nb_variables": 4,
+        "test0": {
+            "variables": {
+                "arg0": ["abc", "def"],
+                "arg1": 3,
+                "arg2": 5,
+                "arg3": 9
+            },
+            "output": 20
+        },
+        "test1": {
+            "variables" : {
+                "arg0": ["a", "abc"],
+                "arg1": 2,
+                "arg2": 0,
+                "arg3": 1
+            },
+            "output": 5
+        }
+    }
 }
