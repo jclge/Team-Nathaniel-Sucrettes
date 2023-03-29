@@ -32,11 +32,11 @@
             "prototype": "def get_mean_length(content: list[str]) -> int",
             "nb_tests": 2,
             "test0": {
-                "input": [2, ["abc", "def"]],
+                "input": [["abc", "def"]],
                 "output": 3
             },
             "test1": {
-                "input": [3, ["a", "abc"]],
+                "input": [["a", "abc"]],
                 "output": 2
             }
         }

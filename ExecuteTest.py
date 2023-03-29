@@ -8,7 +8,7 @@ from GetChallenge import GetChallenge
 
 class Game:
     def __init__(self) -> None:
-        self.__challenge = GetChallenge(randint(0, 0))
+        self.__challenge = GetChallenge(randint(0, 1))
         self.__functions: dict = self.__challenge.get_function_names()
 
     def get_output(self, user: int, code: str) -> dict:
@@ -21,7 +21,10 @@ class Game:
                 try:
                     exec(code, locals())
                     tryout = locals()[self.__functions[f'user{user}'][4:self.__functions[f'user{user}'].index('(')]]
-                    res["return"].append(tryout(*tuple(tests[f"test{i}"]["input"])))
+                    if type(tests[f"test{i}"]["input"]) is list:
+                        res["return"].append(tryout(*tuple(tests[f"test{i}"]["input"])))
+                    else:
+                        res["return"].append(tryout(tests[f"test{i}"]["input"]))
                 except Exception as e:
                     res["return"].append(1)
                     res["code"].append(e)
@@ -31,7 +34,7 @@ class Game:
             stdout.close()
             if res["return"][-1] != tests[f"test{i}"]["output"]:
                 return res
-            return res
+        return res
 
     def __prepare_final_call(self, codes, name) -> tuple:
         call_ = "tmp = " + name
