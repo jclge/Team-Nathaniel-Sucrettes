@@ -1,0 +1,128 @@
+:root {
+    --primaire: #F9AEFB;
+    --secondaire: #F2E2F2;
+    --input_bg: #f200ff;
+    --input_bd: #ae04b8;
+    --ft_primaire: #FB32FF;
+    --ft_secondaire: #FFF5F5;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Lemon";
+    src: url('../assets/fonts/lemon/Lemon-Regular.ttf');
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+    font-family: "Lemon", Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3.5em;
+}
+
+body {
+    background-color: var(--secondaire);
+    min-height: 100vh;
+    min-width: 100vw;
+
+}
+
+nav {
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    min-height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primaire);
+}
+
+nav a {
+    padding: 20px 30px 20px 30px;
+    margin: 20px 20px 20px 20px;
+}
+
+/* create a game */
+
+.input_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 40vh;
+    min-height: 250px;
+    min-width: 300px;
+    width: 25vw;
+    border-radius: 2%;
+    background-color: var(--primaire);
+}
+
+.input_div form {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+}
+
+.input_body a {
+    color: #FFF;
+    text-decoration: none;
+    font-family: "Lemon", Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+}
+
+.input_body form > div {
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input_body form > div > input {
+    background-color: var(--input_bg);
+    border: var(--input_bd) solid 2px;
+    color: var(--ft_secondaire);
+    font-family: "Lemon", Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+}
+
+.input_body form > div > input:hover {
+    background-color: var(--input_bg);
+    border: var(--input_bd) solid 2px;
+    color: var(--ft_secondaire);
+    font-family: "Lemon", Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+}
+
+@supports (-webkit-text-stroke: 5px var(--ft_secondaire)) {
+    .button {
+        -webkit-text-stroke: 5px var(--ft_secondaire);
+        -webkit-text-fill-color: var(--ft_primaire);
+    }
+
+    .input_body a {
+        -webkit-text-stroke: 3px var(--ft_secondaire);
+        -webkit-text-fill-color: var(--ft_primaire);
+    }
+
+    .input_body form > div > input {
+        background-color: var(--input_bg);
+        border: var(--input_bd) solid 2px;
+        color: var(--ft_secondaire);
+        font-family: "Lemon", Verdana, Geneva, Tahoma, sans-serif;
+        padding: 10px;
+    }
+  }

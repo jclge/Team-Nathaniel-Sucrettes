@@ -7,8 +7,9 @@ from GetChallenge import GetChallenge
 
 
 class Game:
-    def __init__(self) -> None:
-        self.__challenge = GetChallenge(randint(0, 1))
+    def __init__(self, challenge:int = randint(0, 1)) -> None:
+        self.__challenge_id = challenge
+        self.__challenge = GetChallenge(self.__challenge_id)
         self.__functions: dict = self.__challenge.get_function_names()
 
     def get_output(self, user: int, code: str) -> dict:
@@ -73,3 +74,9 @@ class Game:
             except Exception as e:
                 res["result"].append(False)
         return res
+
+    def get_public(self) -> dict:
+        return self.__challenge.get_public()
+
+    def get_challenge_id(self) -> int:
+        return self.__challenge_id
