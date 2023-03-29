@@ -1,0 +1,65 @@
+{
+    "language": "python",
+    "time": 900,
+    "title": "The baddest palindrom",
+    "text": "OMG, hi there! I like totally need your help with something super important. I wanna find the coolest palindromes ever! Do you even know what a palindrome is? It's like a word that reads the same forwards and backwards, you know? Like 'kayak' or 'racecar'. So cool, right? Anyway, I need you to write a program that finds the biggest, baddest palindrome in a string. Like, the longer the better, you know what I mean? The string might be super long, but don't worry, it won't be more than 100 characters, pinky promise! Oh, and if there's more than one palindrome that's the same size, just give me the first one you find, okay? And if there's no palindrome, just give me an empty string. And make sure you ignore the stupid uppercase letters, okay? We don't need that kind of negativity in our palindromes.",
+    "examples": {
+        "nb_examples": 2,
+        "example0": {
+            "input": "Wow, racecar is the coolest palindrome ever!",
+            "output": "racecar"
+        },
+        "example1": {
+            "input": "I cAn't believE I found a pAlindRome iN this stRing!",
+            "output": "eve"
+        }
+    },
+    "tests": {
+        "nb_users": 2,
+        "user0": {
+            "nb_tests": 3,
+            "prototype": "def clean_str(string: str) -> list[str]",
+            "test0": {
+                "input": "This is a string.",
+                "output": ["this", "is", "a", "string."]
+            },
+            "test1": {
+                "input": "ThErE is a PaL1ndr0me, kayak!",
+                "output": ["there", "is", "a", "palndrme", "kayak"]
+            },
+            "test2": {
+                "input": "",
+                "output": [""]
+            }
+        },
+        "user1": {
+            "prototype": "def palindrome(content: list[str]) -> str",
+            "nb_tests": 2,
+            "test0": {
+                "input": [["this", "is", "a", "string"]],
+                "output": ""
+            },
+            "test1": {
+                "input": [["there", "is", "a", "palndrme", "kayak"]],
+                "output": "ere"
+            }
+        }
+    },
+    "final_tests": {
+        "how_is_it_called": "palindrome(clean_str(arg0))",
+        "nb_tests": 2,
+        "nb_variables": 1,
+        "test0": {
+            "variables": {
+                "arg0": "'KaYAK'"
+            },
+            "output": "kayak"
+        },
+        "test1": {
+            "variables" : {
+                "arg0": "'NaNJnc dcn!!!KAyAka'"
+            },
+            "output": "nan"
+        }
+    }
+}
