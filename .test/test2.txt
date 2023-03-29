@@ -1,0 +1,5 @@
+def get_mean_length(content: list[str]) -> int:
+    res = 0
+    for i in range(len(content)):
+        res += len(content[i])
+    return res / len(content)
