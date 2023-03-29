@@ -6,10 +6,9 @@ from copy import copy
 from GetChallenge import GetChallenge
 
 
-class Game:
-    def __init__(self, challenge:int = randint(0, 1)) -> None:
-        self.__challenge_id = challenge
-        self.__challenge = GetChallenge(self.__challenge_id)
+class Process:
+    def __init__(self, challenge_id: int) -> None:
+        self.__challenge = GetChallenge(challenge_id)
         self.__functions: dict = self.__challenge.get_function_names()
 
     def get_output(self, user: int, code: str) -> dict:
@@ -77,6 +76,3 @@ class Game:
 
     def get_public(self) -> dict:
         return self.__challenge.get_public()
-
-    def get_challenge_id(self) -> int:
-        return self.__challenge_id
