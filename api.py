@@ -34,12 +34,17 @@ class Teams(Process):
     def get_users(self):
         return {"name": self.name, "id": self.id, "users": [i.get_user() for i in self.users]}
 
+    def add_user(self, user: User) -> None:
+        self.users.append(user)
+        self.nb_users += 1
+
     def remove_user(self, id_user:int) -> None:
         for i in range(self.nb_users):
             if self.users[i].id == id_user:
                 self.users[i].id_team = 0
                 self.users.pop(i)
-        self.nb_users -= 1
+                self.nb_users -= 1
+                break
 
     def get_nb_player(self) -> int:
         return len(self.users)
@@ -57,6 +62,13 @@ class Game:
 
     def add_user(self, id:int, name:int, id_team:int) -> bool:
         self.users.append(User(id, name, id_team))
+        self.teams[id_team].add
+
+    def remove_user(self, user_id: int) -> None:
+        for i in range(len(self.users)):
+            if self.users[i].id == user_id:
+                self.users.pop(i)
+                [team.remove_user(user_id) for team in self.teams]
 
     def change_user_team(self, id_user:int, id_team:int):
         self.teams[self.users[id_user].id_team].remove_user(id_user)
@@ -91,6 +103,8 @@ def change_team(id_game, id_user, id_team):
     games[id_game].change_user_team(id_user, id_team)
     return jsonify()
 
+def delete_game(id_game: int) -> None:
+    del game[id_game]
 
 if __name__ == '__main__':
     app.run(debug=True)
