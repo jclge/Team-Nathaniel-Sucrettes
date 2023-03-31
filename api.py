@@ -34,8 +34,12 @@ class Teams(Process):
     def get_users(self):
         return {"name": self.name, "id": self.id, "users": [i.get_user() for i in self.users]}
 
-    # def remove_user(self, id_user:int) -> None:
-    #     self.users.pop()
+    def remove_user(self, id_user:int) -> None:
+        for i in range(self.nb_users):
+            if self.users[i].id == id_user:
+                self.users[i].id_team = 0
+                self.users.pop(i)
+        self.nb_users -= 1
 
     def get_nb_player(self) -> int:
         return len(self.users)
